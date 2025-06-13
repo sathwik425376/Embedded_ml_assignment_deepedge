@@ -4,39 +4,74 @@ This project is a part of the Embedded Machine Learning course. It explores imag
 
 ---
 
-## 📚 Steps Covered
+## steps covered
+STEPs 1&2
+This extend illustrates how to **resize a BMP picture** to **half its unique measurements** utilizing **three distinctive insertion strategies** in OpenCV. It too benchmarks the execution by measuring the **execution time for 1000 cycles** of each strategy.
+## FEATURES
+Peruses an input BMP picture utilizing OpenCV.
+- Resizes the picture utilizing three introduction methods:
+- `INTER_NEAREST`
+- `INTER_LINEAR`
+- `INTER_CUBIC`
+- Benchmarks the execution by rehashing each strategy 1000 times.
+- Spares resized pictures to disk for comparison.
+## FILE STUCTURE
+── main.cpp # Main C++ program
+├── input.bmp # Input image (provide your own)
+├── resized_INTER_NEAREST.bmp # Output image - nearest interpolation
+├── resized_INTER_LINEAR.bmp # Output image - linear interpolation
+├── resized_INTER_CUBIC.bmp # Output image - cubic interpolation
+└── README.md # Project documentation
+## REQUIRMENTS
+- OpenCV (version 3.x or 4.x)
+- C++17 or later
+- CMake (optional)
+- A C++ compiler 
+## How to Run
+Replace the path of the image in main.cpp with the path of your .BMP image
+## output
+The console shows the time taken by each of the interpolation methods
+the resized images are saved 
+resized_INTER_NEAREST.bmp
+resized_INTER_LINEAR.bmp
+resized_INTER_CUBIC.bmp
+## steps covered
+step 3
+## Building Your Own Image Resizer in C++ and Timing analysis
+This project implements **custom image resizing algorithms** in C++ using OpenCV. It replicates the behavior of OpenCV’s built-in `cv::resize()` function using three interpolation techniques:
+- Nearest Neighbor
+- Bilinear Interpolation
+- Bicubic Interpolation
+Each method resizes an image to **half its original dimensions** and benchmarks the time taken for **1000 iterations** to provide a performance comparison.
+## Need of the project
+While OpenCV provides powerful built-in functions for image resizing, understanding how these methods work internally helps in:
 
-### ✅ Step 1: Image Read, Display, and Resize using OpenCV (Python)
+- Deepening your knowledge of interpolation algorithms.
+- Learning how to manipulate image matrices manually.
+- Understanding computational trade-offs of each method.
+## project stucture
+_ main.cpp # Main C++ program with custom resizing functions
+_input.bmp # Input image (you need to provide your own BMP image)
+_custom_INTER_NEAREST.bmp # Output from custom nearest-neighbor interpolation
+_custom_INTER_LINEAR.bmp # Output from custom bilinear interpolation
+_custom_INTER_CUBIC.bmp # Output from custom bicubic interpolation
+_README.md # This documentation
+## requirments 
+OpenCV (3.x or 4.x)
+- C++17 or later
+- g++, clang++, or MSVC compiler
+- CMake
+## How to run
+Replace the hardcoded image path in main.cpp
+Run the program
+Outputs:
+The program resizes the image using each interpolation method 1000 times.
 
-- Load a `.bmp` image
-- Display the original image
-- Resize the image to half its original size using OpenCV’s `cv2.resize()` with three methods:
-  - `INTER_NEAREST`
-  - `INTER_LINEAR`
-  - `INTER_CUBIC`
-- Save the resized images
+Saves output images:custom_INTER_NEAREST.bmp
 
-#### 🔧 File:
-- `resize_opencv.py`
+custom_INTER_LINEAR.bmp
 
-#### 🏁 Output:
-- `resize_nearest.bmp`
-- `resize_linear.bmp`
-- `resize_cubic.bmp`
+custom_INTER_CUBIC.bmp
+Prints timing results in the console
 
----
-
-### ✅ Step 2: Resize Benchmark using OpenCV (C++)
-
-- Load an image using OpenCV (`imread`)
-- Resize it to half size using `cv::resize()`
-- Measure time for each interpolation method over **1000 iterations**
-- Save and display resized images
-
-#### 🔧 File:
-- `resize_benchmark.cpp`
-
-#### 🛠 Compile:
-
-```bash
-g++ resize_benchmark.cpp -o resize_benchmark.exe -I C:/msys64/ucrt64/include/opencv4 -L C:/msys64/ucrt64/lib -lopencv_core -lopencv_highgui -lopencv_imgcodecs -lopencv_imgproc
+## THE END ##
