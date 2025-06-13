@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build with OpenCV",
+      "type": "shell",
+      "command": "C:/msys64/ucrt64/bin/g++.exe",
+      "args": [
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}.exe",
+        "-I", "C:/msys64/ucrt64/include/opencv4",
+        "-L", "C:/msys64/ucrt64/lib",
+        "-lopencv_core",
+        "-lopencv_imgcodecs",
+        "-lopencv_highgui",
+        "-lopencv_imgproc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "options": {
+        "shell": {
+          "executable": "C:\\Windows\\System32\\cmd.exe",
+          "args": ["/d", "/c"]
+        }
+      }
+    }
+  ]
+}
